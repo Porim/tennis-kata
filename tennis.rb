@@ -1,3 +1,8 @@
+# player1 = gets.chomp
+# player2 = gets.chomp 
+
+# score = [player1_score, player2_score]
+
 def tennis_score(score)
   # ZERO = "Love"
   # FIFTEEN = "Fifteen"
@@ -17,42 +22,52 @@ def tennis_score(score)
 
   case
   when score == [0, 0]
-    "Love-All"
+    return "Love-All"
   when score == [1, 0]
-    "Fifteen-Love"
+    return "Fifteen-Love"
   when score == [0, 1]
-    "Love-Fifteen"
+    return "Love-Fifteen"
   when score == [1, 1]
-    "Fifteen-All"
+    return "Fifteen-All"
   when score == [2, 0]
-    "Thirty-Love"
+    return "Thirty-Love"
   when score == [0, 2]
-    "Love-Thirty"
+    return "Love-Thirty"
   when score == [2, 1]
-    "Thirty-Fifteen" 
+    return "Thirty-Fifteen" 
   when score == [1, 2]
-    "Fifteen-Thirty"
+    return "Fifteen-Thirty"
   when score == [2, 2]
-    "Thirty-All"
+    return "Thirty-All"
   when score == [3, 0]
-    "Forty-Love"
+    return "Forty-Love"
   when score == [0, 3]
-    "Love-Forty"
+    return "Love-Forty"
   when score == [3, 1]
-    "Forty-Fifteen"
+    return "Forty-Fifteen"
   when score == [1, 3]
-    "Fifteen-Forty"
+    return "Fifteen-Forty"
   when score == [3, 2]
-    "Forty-Thirty"
+    return "Forty-Thirty"
   when score == [2, 3]
-    "Thirty-Forty"
-  when score == [3, 3]
-    "Deuce"
+    return "Thirty-Forty"
   when score == [4, 3]
-    "Advantage player1"
+    return "Advantage player1"
   when score == [3, 4]
-    "Advantage player2"
+    return "Advantage player2"
   end
+
+  player1_score = score[0]
+  player2_score = score[1]
+  case
+  when player1_score >= 4 && (player1_score - player2_score) >= 2
+    return "Win for player1"
+  when player2_score >= 4 && (player2_score - player1_score) >= 2
+    return "Win for player2"
+  when player1_score == player2_score && player1_score >= 3
+    return "Deuce"
+  end
+
 end
 
 # testing github, test 2, test 3

@@ -64,4 +64,20 @@ describe '' do
   it 'starting score [1, 3]' do
     expect(tennis_score([1, 3])).to eq("Fifteen-Forty")
   end
+
+  it 'test when both player scored 40 to be "Deuce"' do
+    expect(tennis_score([4, 4])).to eq("Deuce")
+  end
+
+  # it 'test for no deuce when below[3, 3]' do
+  #   expect(tennis_score([2, 2])).to not_eq("Deuce")
+  # end
+
+  it 'player 1 has won the game' do
+    expect(tennis_score([4, 0])).to eq("Win for player1")
+  end
+
+  it 'player 2 has won the game' do
+    expect(tennis_score([0, 4])).to eq("Win for player2")
+  end
 end
